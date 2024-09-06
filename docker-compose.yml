@@ -1,0 +1,15 @@
+services:
+  online-auction-db:
+    image: postgres
+    restart: always
+    container_name: online-auction-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      PG_DATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
